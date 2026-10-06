@@ -6,7 +6,8 @@
     "node": ">=24"
   },
   "scripts": {
-    "dev": "pnpm -r --parallel --if-present dev",
+    "postinstall": "pnpm --filter @notes/shared build",
+    "dev": "pnpm --filter @notes/shared build && pnpm -r --parallel --if-present dev",
     "build": "pnpm -r --if-present build",
     "lint": "pnpm -r --if-present lint",
     "typecheck": "pnpm -r --if-present typecheck",
