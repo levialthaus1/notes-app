@@ -1,6 +1,7 @@
 import { Hono } from 'hono'
 import { db } from './db.js'
 import { notesRoutes } from './notes/notes.routes.js'
+import { auth } from './auth.js'
 
 export const app = new Hono().basePath('/api')
 
@@ -14,6 +15,7 @@ app.get('/health', async (c) => {
   }
 })
 
+app.all('/auth/*', (c) => auth.handler(c.req.raw))
 app.route('/notes', notesRoutes)
 
 // Unknown routes
