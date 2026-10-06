@@ -75,6 +75,9 @@ importers:
       '@notes/shared':
         specifier: workspace:*
         version: link:../../packages/shared
+      better-auth:
+        specifier: ^1.7.7
+        version: 1.7.7(mongodb@7.7.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       react:
         specifier: ^19.2.8
         version: 19.3.0
